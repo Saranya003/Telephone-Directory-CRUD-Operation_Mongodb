@@ -1,10 +1,10 @@
 
-#### 2. Creating a collection
+# 2. Creating a collection
 
 db.createCollection("information")
 
 
-3. Insert the record into the collection.
+#3. Insert the record into the collection.
 
 telephoen_cured> use telephone_cured
 switched to db telephone_cured
@@ -13,7 +13,9 @@ telephone_cured> db.information.insert({"Name" : "Saranya", "PhoneNumber" : "914
   acknowledged: true,
   insertedIds: { '0': ObjectId("637906b5e8d276f7579a76d9") }
 }
-4. Make a query to find the records you just created.
+
+# 4. Make a query to find the records you just created.
+
 telephone_cured> db.information.find()
 [
   {
@@ -23,7 +25,9 @@ telephone_cured> db.information.find()
     Place: 'TamilNadu'
   }
 ]
-5. Modify the records, use the update_one() method. The update_one() method requires two arguments, query and update.
+
+# 5. Modify the records, use the update_one() method. The update_one() method requires two arguments, query and update.
+
 telephone_cured> db.information.updateOne({"Name": "Saranya"},{$set:{"Name": "Sathish Kumr"}})
 {
   acknowledged: true,
@@ -32,7 +36,9 @@ telephone_cured> db.information.updateOne({"Name": "Saranya"},{$set:{"Name": "Sa
   modifiedCount: 1,
   upsertedCount: 0
 }
-6. show the chances to updateone
+
+# 6. show the chances to updateone
+
 telephone_cured> db.information.find()
 [
   {
@@ -42,9 +48,13 @@ telephone_cured> db.information.find()
     Place: 'TamilNadu'
   }
 ]
-7.Delete the record, using delete_one() method. delete_one() requires a query parameter that specifies the document to delete.
+
+# 7.Delete the record, using delete_one() method. delete_one() requires a query parameter that specifies the document to delete.
+
 telephone_cured> db.information.deleteOne({"Name": "Sathish Kumr"})
+
 { acknowledged: true, deletedCount: 1 }
+
 telephone_cured> db.information.find()
 
 telephone_cured>
